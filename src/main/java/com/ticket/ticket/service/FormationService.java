@@ -40,7 +40,7 @@ public class FormationService {
             formationExistante.setNom(formation.getNom());
             formationExistante.setDescription(formation.getDescription());
             formationExistante.setDuree(formation.getDuree());
-            
+
             // Sauvegarde les modifications
             return formationRepo.save(formationExistante);
         } else {
@@ -51,9 +51,9 @@ public class FormationService {
 
 
     //Suppression d'une formation
-    public String suppressionFormation(Formation formation) {
-        formationRepo.deleteById(formation.getId());
-        return "La formation " + formation.getNom() + "a été supprimé avec succès";
+    public String suppressionFormation(Long id) {
+        formationRepo.deleteById(id);
+        return "La formation a été supprimé avec succès";
     }
 
 }
